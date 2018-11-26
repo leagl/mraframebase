@@ -19,11 +19,12 @@
 	<script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
 	<script src="https://unpkg.com/aframe-animation-component@^5.1.2/dist/aframe-animation-component.min.js"></script>
 	<!-- include ar.js -->
-	<!-- <script src="js/vendor/aframe/build/aframe-ar.js"></script> -->
+	<script src="js/vendor/aframe/build/aframe-ar.js"></script>
+
 </head>
 
 <body>
-	<a-scene>
+	<a-scene embedded arjs='patternRatio: 0.7'>
 
 		<a-assets>
 			<a-asset-item id="erde" src="/assets/erde.gltf"> </a-asset-item>
@@ -36,75 +37,100 @@
 			<a-asset-item id="neptun" src="/assets/neptun.gltf"> </a-asset-item>
 		</a-assets>
 
-		<!-- ERDE -->
+		<a-marker preset="custom" type="pattern" url="patterns/1.patt"> 
 
-		<a-entity>
-			<a-entity gltf-model="#erde" position="0 0 -2" scale="0.2 0.2 0.2"> <a-animation attribute="rotation" dur="5000" to="0 360 0" repeat="indefinite" easing="linear"></a-animation> </a-entity> 
-			<a-animation attribute="rotation" dur="5000" to="0 360 0" repeat="indefinite" easing="linear"></a-animation>
-		</a-entity>
 
-		<!-- MERKUR -->
-		<a-entity>
-			<a-entity positon="0 0 0" rotation="0 45 0">
-				<a-entity gltf-model="#mercury" position="0 0 -2" scale="0.2 0.2 0.2">
+			<!-- ERDE -->
+
+			<a-entity>
+				<a-entity gltf-model="#erde" position="0 0 -2" scale="0.2 0.2 0.2"> <a-animation attribute="rotation" dur="5000" to="0 360 0" repeat="indefinite" easing="linear"></a-animation> </a-entity> 
 				<a-animation attribute="rotation" dur="5000" to="0 360 0" repeat="indefinite" easing="linear"></a-animation>
+			</a-entity>
+
+			<!-- MERKUR -->
+			<a-etenity>
+				<a-entity position="0 0 0" rotation="0 90 0">
+					<a-entity gltf-model="#mercury" position="0 0 -2" scale="0.2 0.2 0.2"> 
+						<a-animation attribute="rotation" dur="5000" to="0 360 0" repeat="indefinite" easing="linear"></a-animation>
+						</a-entity>
+					</a-entity>
+					<a-animation attribute="rotation" dur="5000" to="0 360 0" repeat="indefinite" easing="linear"></a-animation>
+			</a-etenity>
+
+			<!-- VENUS -->
+
+			<a-entity>
+				<a-entity positon="0 0 0" rotation="0 90 0">
+					<a-entity gltf-model="#venus" position="0 0 -2" scale="0.2 0.2 0.2">
+						<a-animation attribute="rotation" dur="5000" to="0 360 0" repeat="indefinite" easing="linear"></a-animation>
+					</a-entity>
 				</a-entity>
-			</a-entity>
-		</a-entity>
-
-		<!-- VENUS -->
-
-		<a-entity>
-			<a-entity positon="0 0 0" rotation="0 90 0">
-				<a-entity gltf-model="#venus" position="0 0 -2" scale="0.2 0.2 0.2">
-			</a-entity> <a-animation attribute="rotation" dur="5000" to="0 360 0" repeat="indefinite" easing="linear"></a-animation>
-			</a-entity>
-		</a-entity>
-
-
-		<!-- MARS -->
-		<a-entity>
-			<a-entity positon="0 0 0" rotation="0 135 0">
-				<a-entity gltf-model="#mars" position="0 0 -2" scale="0.2 0.2 0.2">
 				<a-animation attribute="rotation" dur="5000" to="0 360 0" repeat="indefinite" easing="linear"></a-animation>
-				</a-entity>
 			</a-entity>
-			<a-animation attribute="rotation" dur="5000" to="0 360 0" repeat="indefinite" easing="linear"></a-animation>
-		</a-entity>
 
-		<!-- JUPITER -->
-
-		<a-entity>
-		<a-entity positon="0 0 0" rotation="0 180 0">
-			<a-entity gltf-model="#jupiter" position="0 0 -2" scale="0.2 0.2 0.2"></a-entity>
-		<a-animation attribute="rotation" dur="5000" to="0 360 0" repeat="indefinite" easing="linear"></a-animation>
+			<!-- MARS -->
+			<a-entity>
+				<a-entity positon="0 0 0" rotation="0 135 0">
+					<a-entity gltf-model="#mars" position="0 0 -2" scale="0.2 0.2 0.2">
+						<a-animation attribute="rotation" dur="5000" to="0 360 0" repeat="indefinite" easing="linear"></a-animation>
+					</a-entity>
 				</a-entity>
-			<a-animation attribute="rotation" dur="5000" to="0 360 0" repeat="indefinite" easing="linear"></a-animation>
-		</a-entity>
+				<a-animation attribute="rotation" dur="5000" to="0 360 0" repeat="indefinite" easing="linear"></a-animation>
+			</a-entity>
 
-		<!-- SATURN -->
+			<!-- JUPITER -->
 
-		<a-entity positon="0 0 0" rotation="0 225 0">
-			<a-entity gltf-model="#saturn" position="0 0 -2" scale="0.2 0.2 0.2"></a-entity>
-		</a-entity>
+			<a-entity>
+				<a-entity positon="0 0 0" rotation="0 180 0">
+					<a-entity gltf-model="#jupiter" position="0 0 -2" scale="0.2 0.2 0.2">
+						<a-animation attribute="rotation" dur="5000" to="0 360 0" repeat="indefinite" easing="linear"></a-animation>
+					</a-entity>
 
-		<!-- URANUS -->
+				</a-entity>
+				<a-animation attribute="rotation" dur="5000" to="0 360 0" repeat="indefinite" easing="linear"></a-animation>
+			</a-entity>
 
-		<a-entity positon="0 0 0" rotation="0 270 0">
-			<a-entity gltf-model="#uranus" position="0 0 -2" scale="0.2 0.2 0.2"></a-entity>
-		</a-entity>
+			<!-- SATURN -->
 
-		<!-- NEPTUN -->
+			<a-entity>
+				<a-entity positon="0 0 0" rotation="0 225 0">
+					<a-entity gltf-model="#saturn" position="0 0 -2" scale="0.2 0.2 0.2">
+						<a-animation attribute="rotation" dur="5000" to="0 360 0" repeat="indefinite" easing="linear"></a-animation>
+					</a-entity>
 
-		<a-entity positon="0 0 0" rotation="0 315 0">
-			<a-entity gltf-model="#neptun" position="0 0 -2" scale="0.2 0.2 0.2"></a-entity>
-		</a-entity>
+				</a-entity>
+				<a-animation attribute="rotation" dur="5000" to="0 360 0" repeat="indefinite" easing="linear"></a-animation>
+			</a-entity>
+
+			<!-- URANUS -->
+
+			<a-entity>
+				<a-entity positon="0 0 0" rotation="0 270 0">
+					<a-entity gltf-model="#uranus" position="0 0 -2" scale="0.2 0.2 0.2">
+						<a-animation attribute="rotation" dur="5000" to="0 360 0" repeat="indefinite" easing="linear"></a-animation>
+					</a-entity>
+
+				</a-entity>
+				<a-animation attribute="rotation" dur="5000" to="0 360 0" repeat="indefinite" easing="linear"></a-animation>
+			</a-entity>
 
 
+			<!-- NEPTUN -->
+			<a-entity>
+				<a-entity positon="0 0 0" rotation="0 315 0">
+					<a-entity gltf-model="#neptun" position="0 0 -2" scale="0.2 0.2 0.2">
+						<a-animation attribute="rotation" dur="5000" to="0 360 0" repeat="indefinite" easing="linear"></a-animation>
+					</a-entity>
+
+				</a-entity>
+				<a-animation attribute="rotation" dur="5000" to="0 360 0" repeat="indefinite" easing="linear"></a-animation>
+			</a-entity>
+
+		</a-marker> 
 
 		<!-- CAMERA -->
-		<a-camera camera position="0 0 0">
-		</a-camera>
+		<a-entity camera> </a-entity>
+		
 
 	</a-scene>
 
